@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="">
+    <div class="card-group">
+        <!-- Blog Entries Column -->
+
+        {% for post in post_list|slice:":2" %}
+        <div class="card toptwocard" style="width: 100%; margin: 5px; max-height: 80%;">
+            {% if post.image %}
+            <img class="card-img-top toptwoimg" src="{{ post.image.url }}" alt="Post image cap" height="60%">
+            {% else %}
+            <img class="card-img-top toptwoimg"
+                src="https://static.vecteezy.com/system/resources/previews/006/309/690/non_2x/creative-real-estate-logo-design-house-logo-design-real-estate-icon-vector.jpg"
+                alt="Post image cap" height="60%">
+            {% endif %}
+
+            <div class="card-body">
+                <h6 class="card-text">{{ post.title }}</h6>
+                <h5 card-text text-muted h6">{{ post.subtitle }}</h5>
+                <p style="font-size: 10px;">By {{ post.author }} | {{ post.created_on}} </p>
+                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="nocard">
+        {% for post in post_list|slice:"2:" %}
+        <a href="{% url 'post_detail' post.slug  %}">
+            <div class="postblog">
+                <div class="postimg">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="" height="100" width="100">
+                    {% else %}
+                    <img class="card-img-top toptwoimg"
+                        src="https://static.vecteezy.com/system/resources/previews/006/309/690/non_2x/creative-real-estate-logo-design-house-logo-design-real-estate-icon-vector.jpg"
+                        alt="" height="100" width="100">
+                    {% endif %}
+
+                </div>
+                <div class="postinfo">
+                    <h5>{{ post.title }}</h5>
+                    <h6>{{ post.subtitle }}</h6>
+                    <p style="font-size: 10px;">By {{ post.author }} | {{ post.created_on}} </p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}

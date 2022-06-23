@@ -1,0 +1,136 @@
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="keywords"
+        content="barber, Barber's Hub, Barbers, Barbershub, shaving, aftershave, hairproduct, hair cream, barbershop, online booking">
+    <meta name="description"
+        content="Find the best barber in your location and get the best result for your desired hairstyle">
+    <meta name="author" content="chancity, Barber's Hub"> -->
+    <title>Gain Wealth Investment</title>
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/scroll.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+    .nocard {
+        width: 100%;
+    }
+
+    .nocard .postblog {
+        width: 100%;
+        padding: 3px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .postimg {
+        width: 30%;
+        text-align: left;
+    }
+
+    .postinfo {
+        width: 70%;
+        text-align: justify;
+    }
+
+    .postinfo h5,
+    h6,
+    p {
+        margin: 0;
+        margin-bottom: 8px;
+        padding: 0;
+    }
+</style>
+
+
+<body>
+    <div id="top">
+        {% include 'nav.html' %}
+
+        <div id="page-content-wrapper">
+            <div class="section wb">
+                <div class="container">
+                    {% include 'welcome.html' %}
+
+                    {% block content %}
+                    <!-- Content Goes here -->
+                    {% endblock content %}
+
+                    <hr class="hr1">
+                </div><!-- end container -->
+
+            </div><!-- end section -->
+        </div><!-- end section -->
+
+
+        <div class="section lb">
+            <div class="container">
+                <div class="row" id="AboutUs">
+                    <div class="col-md-12">
+                        <div class="about-tab">
+                            <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" href="#tab_a" data-toggle="tab">Our
+                                        Mission</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tab_c" data-toggle="tab">Why Us</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tab_a">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                                        with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                                        recently with desktop publishing software like Aldus PageMaker including
+                                        versions of Lorem Ipsum. </p>
+                                </div>
+                                <div class="tab-pane fade" id="tab_c">
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                        that it has a more-or-less normal distribution of letters, as opposed to using
+                                        'Content here, content here', making it look like readable English. Many desktop
+                                        publishing packages and web page editors now use Lorem Ipsum as their default
+                                        model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                                        their infancy. Various versions have evolved over the years, sometimes by
+                                        accident, sometimes on purpose (injected humour and the like).
+                                    </p>
+                                </div>
+                            </div><!-- tab content -->
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
+            </div>
+        </div>
+        <hr class="hr1">
+        <hr class="hr1">
+
+        {% include 'slide.html' %}
+
+
+
+
+
+
+        {% include 'footer.html' %}
+    </div>
+    </div>
+
+    <!-- <a href="#top" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up" aria-hidden="true"></i></a> -->
+</body>
+
+</html>

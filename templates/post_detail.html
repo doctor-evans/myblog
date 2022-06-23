@@ -1,0 +1,217 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="keywords"
+        content="barber, Barber's Hub, Barbers, Barbershub, shaving, aftershave, hairproduct, hair cream, barbershop, online booking">
+    <meta name="description"
+        content="Find the best barber in your location and get the best result for your desired hairstyle">
+    <meta name="author" content="chancity, Barber's Hub"> -->
+    <title>Gain Wealth Investment</title>
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/scroll.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+    .breadcrumps {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .breadcrumps span {
+        font-size: 15px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .breadcrumps span h6 {
+        letter-spacing: 1.5px;
+        color: blueviolet;
+        text-transform: uppercase;
+
+    }
+
+    .greatersign {
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 0px 2px;
+    }
+
+    .postblog {
+        width: 100%;
+        padding: 3px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .postimg {
+        width: 30%;
+        text-align: left;
+    }
+
+    .postinfo {
+        width: 70%;
+        text-align: justify;
+    }
+
+    .postinfo h5,
+    h6,
+    p {
+        margin: 0;
+        margin-bottom: 8px;
+        padding: 0;
+    }
+
+    .related_article {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .postimage {
+        width: 596px;
+        height: 450px;
+    }
+
+    h1 {
+        border-bottom: 2px solid blue;
+
+    }
+
+    .comment_section {
+        margin-top: 100px;
+    }
+
+    .comments {
+        font-size: 18px;
+    }
+
+    .commentname b {
+        text-transform: capitalize;
+    }
+
+    .commentname small {
+        font-size: 10px;
+    }
+</style>
+
+<body>
+    {% include 'nav.html' %}
+    <div class="container">
+
+
+        <div class="breadcrumps">
+            <span>
+                <h6>Gain Wealth </h6>
+            </span>
+            <span>
+                <h6 class="greatersign"> > </h6>
+            </span>
+            <span><a href="{% url 'home' %}">
+                    <h6> Home </h6>
+                </a>
+            </span>
+            <span>
+                <h6 class="greatersign"> > </h6>
+            </span>
+            <span>
+                <h6> {{ post.title }} </h6>
+            </span>
+        </div>
+        <div class="">
+            <div>
+                <div>
+                    <div>
+                        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
+                        <p class="">By <b>{{ post.author }}</b></p>
+                        <p><small>uploaded on</small> {{ post.created_on }}</p>
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" class="postimage" alt="">
+                        {% else %}
+                        <img src="https://static.vecteezy.com/system/resources/previews/006/309/690/non_2x/creative-real-estate-logo-design-house-logo-design-real-estate-icon-vector.jpg"
+                            class="postimage" alt="">
+                        {% endif %}
+                        <h5>{{ post.subtitle }}</h5>
+                        <p class="">{{ post.content | safe }}</p>
+                    </div>
+                </div>
+
+
+
+                <div class="related_article">
+                    <h4>Related Articles</h4>
+                    {% for post in all_post %}
+                    <a href="{% url 'post_detail' post.slug  %}">
+                        <div class="postblog">
+                            <div class="postimg">
+                                {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="" height="100" width="100">
+                                {% else %}
+                                <img class="card-img-top toptwoimg"
+                                    src="https://static.vecteezy.com/system/resources/previews/006/309/690/non_2x/creative-real-estate-logo-design-house-logo-design-real-estate-icon-vector.jpg"
+                                    alt="" height="100" width="100">
+                                {% endif %}
+                            </div>
+                            <div class="postinfo">
+                                <h5>{{ post.title }}</h5>
+                                <h6>{{ post.subtitle }}</h6>
+                                <p style="font-size: 10px;">By {{ post.author }} | {{ post.created_on}} </p>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="comment_section">
+                    <div class="comments">
+                        <!-- comments -->
+                        <h4>{{ comments.count }} comment(s)</h4>
+
+                        {% for comment in comments %}
+                        <div class="commentname">
+                            <p>
+                                <b>{{ comment.name }}</b>
+                                <small>
+                                    {{ comment.created_on }}
+                                </small>
+                            </p>
+                            {{ comment.body | linebreaks }}
+                        </div>
+                        <hr class="hr1">
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        {% if new_comment %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting moderation
+                        </div>
+                        {% else %}
+                        <h3>Leave a comment</h3>
+                        <form method="post" style="margin-top: 1.3em;">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>
