@@ -230,11 +230,6 @@ ol {
     vertical-align: middle;
 }
 
-.slider-01 {
-    background: url('/static/barbers/barber_all.jpg') no-repeat center;
-    background-size: cover;
-    height: 630px;
-}
 
 
 .home-hero .big-tagline h2 {
@@ -287,7 +282,6 @@ ol {
     overflow: hidden;
     position: relative;
     background-position: center center;
-    vertical-align: sub;
     width: 100%;
     z-index: 2;
 }
@@ -828,11 +822,6 @@ body.barber_version .about-tab .nav-pills>li a:hover {
     padding-bottom: 0;
 }
 
-.message-box {
-    background: url('/static/barbers/about-bg.jpg') no-repeat center;
-    background-size: cover;
-    padding: 40px 0px;
-}
 
 .message-box h4 {
     text-transform: uppercase;
@@ -866,7 +855,6 @@ body.barber_version .about-tab .nav-pills>li a:hover {
     padding-bottom: 0;
 }
 
-.right-box {}
 
 .post-media {
     position: relative;
@@ -1843,11 +1831,7 @@ select.mobile-device {
     Inner Pages
 -------------------------------------------------------------------*/
 
-.all-page-bar {
-    background: url('/static/barbers/image.jpeg') no-repeat center;
-    background-size: cover;
-    position: relative;
-}
+
 
 .all-page-bar::before {
     content: "";
@@ -1968,7 +1952,6 @@ body.barber_version .dev-list .widget:hover .hover-br .social-up-hover .footer-s
     font-weight: 700;
 }
 
-.appointment-time ul {}
 
 .appointment-time ul li {
     color: #ffffff;
