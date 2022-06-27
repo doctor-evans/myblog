@@ -21,7 +21,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    image = models.ImageField(upload_to='images', blank=True)
+    image = models.ImageField(upload_to="images", blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -31,6 +31,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
+
         return reverse("post_detail", kwargs={"slug": str(self.slug)})
 
 
@@ -46,3 +47,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return "Comment {} by {}".format(self.body, self.name)
+
+
+class Links(models.Model):
+    twitter = models.URLField(null=True, blank=True, default='')
+    facebook = models.URLField(null=True, blank=True, default='')
+    youtube = models.URLField(null=True, blank=True, default='')
+    instagram = models.URLField(null=True, blank=True, default='')
+    linkedin = models.URLField(null=True, blank=True, default='')
+
+
+class Quotes(models.Model):
+    quote = models.CharField(max_length=250)

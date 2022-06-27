@@ -1,7 +1,7 @@
 from re import template
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post
+from .models import Post, Quotes, Links
 from .forms import CommentForm
 
 
@@ -43,3 +43,15 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+
+def quote_view(request):
+    template_name = "base.html"
+    all_quotes = Quotes.objects.all()
+
+    return render(request, "base.html", {"all_quotes": all_quotes})
+
+
+def sociallinks(request):
+    links = Links.objects.all().first()
+    return render(request, "footer.html", {"links": links})
