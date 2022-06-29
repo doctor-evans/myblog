@@ -58,6 +58,3 @@ def post_detail(request, slug):
     )
 
 
-def sociallinks(request):
-    links = Links.objects.all().first()
-    return render(request, "links.html", {"links": links})
