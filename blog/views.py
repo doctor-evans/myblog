@@ -5,14 +5,27 @@ from .models import Post, Quotes, Links
 from .forms import CommentForm
 
 
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
+# class PostList(generic.ListView):
+#     queryset = Post.objects.filter(status=1).order_by("-created_on")
+#     template_name = "index.html"
 
 
 # class PostDetail(generic.DetailView):
 #     model = Post
 #     template_name = "post_detail.html"
+
+
+def indexView(request):
+    template_name = "index.html"
+    all_quotes = Quotes.objects.all()
+    post_list = Post.objects.filter(status=1).order_by("-created_on")
+    links = Links.objects.all().first()
+
+    return render(
+        request,
+        "index.html",
+        {"all_quotes": all_quotes, "post_list": post_list, "links": links},
+    )
 
 
 def post_detail(request, slug):
@@ -45,13 +58,6 @@ def post_detail(request, slug):
     )
 
 
-def quote_view(request):
-    template_name = "base.html"
-    all_quotes = Quotes.objects.all()
-
-    return render(request, "base.html", {"all_quotes": all_quotes})
-
-
 def sociallinks(request):
     links = Links.objects.all().first()
-    return render(request, "footer.html", {"links": links})
+    return render(request, "links.html", {"links": links})

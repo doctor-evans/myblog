@@ -50,11 +50,11 @@ class Comment(models.Model):
 
 
 class Links(models.Model):
-    twitter = models.URLField(null=True, blank=True, default='')
-    facebook = models.URLField(null=True, blank=True, default='')
-    youtube = models.URLField(null=True, blank=True, default='')
-    instagram = models.URLField(null=True, blank=True, default='')
-    linkedin = models.URLField(null=True, blank=True, default='')
+    twitter = models.URLField(null=True, blank=True, default="")
+    facebook = models.URLField(null=True, blank=True, default="")
+    youtube = models.URLField(null=True, blank=True, default="")
+    instagram = models.URLField(null=True, blank=True, default="")
+    linkedin = models.URLField(null=True, blank=True, default="")
 
 
 class Quotes(models.Model):
