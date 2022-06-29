@@ -1,7 +1,7 @@
 from re import template
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post, Quotes, Links
+from .models import Post, Quotes, Links, AboutUs
 from .forms import CommentForm
 
 
@@ -58,3 +58,6 @@ def post_detail(request, slug):
     )
 
 
+def aboutUsView(request):
+    about = AboutUs.objects.all().first()
+    return render(request, "about.html", {"about": about})

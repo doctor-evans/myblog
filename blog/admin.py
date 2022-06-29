@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Links, Quotes
+from .models import Post, Comment, Links, Quotes, AboutUs
 
 # Register your models here.
 # username: code
@@ -25,3 +25,4 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Post, PostAdmin)
 admin.site.register(Links)
 admin.site.register(Quotes)
+admin.site.register(AboutUs)

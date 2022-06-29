@@ -1,12 +1,97 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="keywords" content="Realestate, housing, infrastructure">
+    <meta name="description" content="your number realestate informative site in Nigeria">
+    <title>Gain Wealth Investment</title>
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/scroll.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
+
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .abouttitle {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .abouttitle h1 {
+        margin: 0;
+    }
+
+    .abouttitle span {
+        width: 8%;
+        display: inline-block;
+        background: #2c40d0;
+        height: 10px;
+        border-radius: 20px;
+    }
+
+    .info {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .nameandtitle {
+        margin-left: 10px;
+    }
+</style>
+
 <body>
-    
+    {% include 'nav.html' %}
+    <div class="container">
+        <div class="abouttitle">
+            <h1>About Us</h1>
+            <span class="underline"></span>
+        </div>
+        <div class="whoarewe">
+            <h4 style="font-weight: 200;">
+                Who Are We
+            </h4>
+            <p>{{ about.who_are_we }}</p>
+        </div>
+        <div style="margin-bottom: 50px;">
+            <p>For more inquires and for media info, please contact us at {{ about.email }}</p>
+        </div>
+        <div class="aboutProfile">
+            <h5>About The CEO</h5>
+            <div class="profileinfo">
+                <div class="info">
+                    <img src="{{ about.profilePic.url }}" alt="" height="150" width="150">
+                    <div class="nameandtitle">
+                        <h6 style="font-weight: bold;">{{ about.name }}</h6>
+                        <h6 style="font-weight: 100; margin: 0;">{{ about.title }}</h6>
+                    </div>
+                </div>
+                <div>
+                    <p>{{ about.aboutAdmin }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
 </body>
+
 </html>
