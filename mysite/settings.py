@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-@@=c*pw_a-poxvn63ek(4vm!!hkf97@j-$zikk554+^zd$-bwp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://gainwealth.net", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blog",
     "crispy_forms",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 MIDDLEWARE = [
@@ -133,5 +135,6 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_ROOT = BASE_DIR / "images"
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 django_heroku.settings(locals())
