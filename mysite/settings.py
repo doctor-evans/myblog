@@ -56,6 +56,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://gainwealth.net",
+    "https://www.gainwealth.net",
+    "https://gainwealth.net/admin",
+    "https://www.gainwealth.net/admin",
+]
+
 ROOT_URLCONF = "mysite.urls"
 
 TEMPLATES = [
