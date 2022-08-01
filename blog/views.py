@@ -16,7 +16,7 @@ from .forms import CommentForm
 
 
 def indexView(request):
-    template_name = "index.html"
+    about = AboutUs.objects.all().first()
     all_quotes = Quotes.objects.all()
     post_list = Post.objects.filter(status=1).order_by("-created_on")
     links = Links.objects.all().first()
@@ -24,12 +24,11 @@ def indexView(request):
     return render(
         request,
         "index.html",
-        {"all_quotes": all_quotes, "post_list": post_list, "links": links},
+        {"all_quotes": all_quotes, "post_list": post_list, "links": links, "about":about},
     )
 
 
 def post_detail(request, slug):
-    template_name = "post_detail.html"
     all_post = Post.objects.all()
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)

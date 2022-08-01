@@ -30,6 +30,14 @@ body {
     height: 100%;
 }
 
+.imglogo {
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 body.demos .service-widget h3 {
     border-bottom: 1px solid #ededed;

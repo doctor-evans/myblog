@@ -9,6 +9,7 @@
     <meta name="keywords" content="Realestate, housing, infrastructure">
     <meta name="description" content="your number realestate informative site in Nigeria">
     <title>Gain Wealth Investment</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'blog/gwlogo1.png' %}">
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
     <link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'blog/scroll.css' %}">
@@ -19,12 +20,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
-
 <style>
     body {
-        font-family: 'Times New Roman', Times, serif !important;
+        font-family: 'Roboto', 'Times New Roman', Times, serif !important;
     }
 
     p {
@@ -67,15 +67,13 @@
         </div>
         <div class="whoarewe">
             <h4 style="font-weight: 200;">
-                Who Are We
+                Who We are:
             </h4>
             <p>{{ about.who_are_we }}</p>
         </div>
-        <div style="margin-bottom: 50px;">
-            <p>For more inquires and for media info, please contact us at {{ about.email }}</p>
-        </div>
+
         <div class="aboutProfile">
-            <h5>About The CEO</h5>
+            <h5>Our Mission</h5>
             <div class="profileinfo">
                 <div class="info">
                     <img src="{{ about.profilePic.url }}" alt="" height="150" width="150">

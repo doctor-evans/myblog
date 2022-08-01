@@ -1,8 +1,11 @@
+{% load static %}
 <hr class="hr1">
 <div class="copyrights" background-color: #171817;>
     <div class="container" style="color:white;">
         <div style="padding:20px; text-align:center;">
-            <a style="color: white;" href="{% url 'home' %}">Gainwealth Investment</a>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'blog/gwlogo2.png' %}" alt="" height="150" width="150" style="padding:0;">
+            </a>
         </div>
 
         <div class="footer-distributed">
@@ -29,15 +32,21 @@
                 </div>
                 <p class="The barber's Hub">All Rights Reserved. &copy; 2022;
                 </p>
-                <div style="margin-top: 20px; width: 80%; margin-left: 10px;">
-                    <ul style="list-style-type:none; columns:2;">
-                        <li><a href="/" style="color: white;">Home</a></li>
-                        <li><a href="{% url 'aboutview' %}" style="color: white;">About Us</a></li>
-                        <li><a href="/" style="color: white;">Product</a></li>
-                        <li><a href="#" style="color: white;">Contact Us</a></li>
-                    </ul>
+                <div class="container">
+
+                    <div style="display: flex; justify-content: center;">
+
+                        <ul style="text-align: justify;">
+                            <li><a href="/" style="color: white;">Home</a></li>
+                            <li><a href="{% url 'aboutview' %}" style="color: white;">About Us</a></li>
+                            <li><a href="/" style="color: white;">Product</a></li>
+                            <li><a href="#" style="color: white;">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+
+
+
                 </div>
-            </div>
-        </div>
-    </div><!-- end container -->
-</div><!-- end copyrights -->
+            </div><!-- end container -->
+        </div><!-- end copyrights -->

@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords"
-        content="Realestate, housing, infrastructure">
-    <meta name="description"
-        content="your number realestate informative site in Nigeria">
+    <meta name="keywords" content="Realestate, housing, infrastructure">
+    <meta name="description" content="your number realestate informative site in Nigeria">
     <title>Gain Wealth Investment</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'blog/gwlogo1.png' %}">
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
     <link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'blog/scroll.css' %}">
@@ -20,11 +19,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <style>
     body {
-        font-family: 'Times New Roman', Times, serif !important;
+        font-family: 'Roboto', 'Times New Roman', Times, serif !important;
     }
 
     .nocard {
@@ -88,8 +87,8 @@
                             <div style="text-align:center;">
                                 <h5 style="margin-top:15%;"><i>{{ quote.quote }}</i></h5>
                             </div>
-                            
-                            
+
+
                         </div>
                     </div>
                     {% endfor %}
@@ -112,27 +111,10 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="tab_a">
-                                    <p style="text-align:justify; text-justify:inter-word;">Lorem Ipsum is simply dummy
-                                        text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type and scrambled it to make a type specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                                        with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including
-                                        versions of Lorem Ipsum. </p>
+                                    <p style="text-align:justify; text-justify:inter-word;">{{ about.who_are_we }}</p>
                                 </div>
                                 <div class="tab-pane fade" id="tab_c">
-                                    <p style="text-align:justify; text-justify:inter-word;">It is a long established
-                                        fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
-                                        that it has a more-or-less normal distribution of letters, as opposed to using
-                                        'Content here, content here', making it look like readable English. Many desktop
-                                        publishing packages and web page editors now use Lorem Ipsum as their default
-                                        model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                                        their infancy. Various versions have evolved over the years, sometimes by
-                                        accident, sometimes on purpose (injected humour and the like).
-                                    </p>
+                                    <p style="text-align:justify; text-justify:inter-word;">{{ about.aboutAdmin }}</p>
                                 </div>
                             </div><!-- tab content -->
                         </div>
