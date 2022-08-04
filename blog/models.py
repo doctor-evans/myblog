@@ -1,5 +1,7 @@
+from distutils.command.upload import upload
 from operator import mod
 import profile
+from unicodedata import name
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -66,10 +68,19 @@ class Quotes(models.Model):
 class AboutUs(models.Model):
     name = models.CharField(max_length=250, default="Admin")
     title = models.CharField(max_length=250, default="Admin")
-    aboutAdmin = models.TextField()
+    ourmission = models.TextField()
     who_are_we = models.TextField()
-    profilePic = models.ImageField(upload_to="images", blank=False)
     email = models.EmailField(default="gainwealth@mail.com")
+
+    def __str__(self):
+        return self.name
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=250)
+    title = models.CharField(max_length=250)
+    about = models.TextField()
+    profilepicture = models.ImageField(upload_to="images", blank=False)
 
     def __str__(self):
         return self.name

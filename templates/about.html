@@ -78,17 +78,36 @@
         <div class="aboutProfile">
             <h5>Our Mission</h5>
             <div class="profileinfo">
-                <div class="info">
-                    <img src="{{ about.profilePic.url }}" alt="" height="150" width="150">
-                    <div class="nameandtitle">
-                        <h6 style="font-weight: bold;">{{ about.name }}</h6>
-                        <h6 style="font-weight: 100; margin: 0;">{{ about.title }}</h6>
-                    </div>
-                </div>
                 <div>
                     <p>{{ about.aboutAdmin }}</p>
                 </div>
             </div>
+        </div>
+
+        <hr class="hr1">
+
+        <div class="abouttitle">
+            <h1>Our Team</h1>
+            <span class="underline"></span>
+        </div>
+
+
+        <div class="aboutProfile">
+            {% for eachteam in team %}
+            <h5></h5>
+            <div class="profileinfo">
+                <div class="info">
+                    <img src="{{ eachteam.profilepicture.url }}" alt="" height="150" width="150">
+                    <div class="nameandtitle">
+                        <h6 style="font-weight: bold;">{{ eachteam.name }}</h6>
+                        <h6 style="font-weight: 100; margin: 0;">{{ eachteam.title }}</h6>
+                    </div>
+                </div>
+                <div>
+                    <p>{{ eachteam.about }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 

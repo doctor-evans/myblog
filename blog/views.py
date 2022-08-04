@@ -1,7 +1,7 @@
 from re import template
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post, Quotes, Links, AboutUs
+from .models import Post, Quotes, Links, AboutUs, Team
 from .forms import CommentForm
 
 
@@ -24,7 +24,12 @@ def indexView(request):
     return render(
         request,
         "index.html",
-        {"all_quotes": all_quotes, "post_list": post_list, "links": links, "about":about},
+        {
+            "all_quotes": all_quotes,
+            "post_list": post_list,
+            "links": links,
+            "about": about,
+        },
     )
 
 
@@ -59,4 +64,5 @@ def post_detail(request, slug):
 
 def aboutUsView(request):
     about = AboutUs.objects.all().first()
-    return render(request, "about.html", {"about": about})
+    team = Team.objects.all()
+    return render(request, "about.html", {"about": about, "team": team})
