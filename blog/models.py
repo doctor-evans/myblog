@@ -68,7 +68,7 @@ class Quotes(models.Model):
 class AboutUs(models.Model):
     name = models.CharField(max_length=250, default="Admin")
     title = models.CharField(max_length=250, default="Admin")
-    ourmission = models.TextField()
+    aboutAdmin = models.TextField()
     who_are_we = models.TextField()
     email = models.EmailField(default="gainwealth@mail.com")
 
