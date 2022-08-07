@@ -36,11 +36,11 @@
 
     .breadcrumps span {
         font-size: 15px;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Roboto', 'Times New Roman', Times, serif !important;
     }
 
-    .breadcrumps span h6 {
-        letter-spacing: 1.5px;
+    .breadcrumps span p {
+        letter-spacing: 1px;
         color: blueviolet;
         text-transform: uppercase;
 
@@ -61,8 +61,9 @@
     }
 
     .postimg {
-        width: 30%;
+        width: 25%;
         text-align: left;
+        margin-right: 10px;
     }
 
     .postinfo {
@@ -126,20 +127,20 @@
 
         <div class="breadcrumps">
             <span>
-                <h6>Gain Wealth </h6>
+                <p>Gain Wealth </p>
             </span>
             <span>
-                <h6 class="greatersign"> > </h6>
+                <p class="greatersign"> > </p>
             </span>
             <span><a href="{% url 'home' %}">
-                    <h6> Home </h6>
+                    <p> Home </p>
                 </a>
             </span>
             <span>
-                <h6 class="greatersign"> > </h6>
+                <p class="greatersign"> > </p>
             </span>
             <span>
-                <h6> {{ post.title }} </h6>
+                <p> {{ post.title }} </p>
             </span>
         </div>
         <div class="">

@@ -25,7 +25,7 @@ class Post(models.Model):
     content = RichTextUploadingField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    image = models.ImageField(upload_to="images", blank=True)
+    image = models.ImageField(upload_to="images/", blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -70,6 +70,9 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=250, default="Admin")
     ourmission = models.TextField()
     who_are_we = models.TextField()
+    welcome_message = models.TextField(
+        default="this is the welcome message, pls change it to whatever you want."
+    )
     email = models.EmailField(default="gainwealth@mail.com")
 
     def __str__(self):
@@ -80,7 +83,7 @@ class Team(models.Model):
     name = models.CharField(max_length=250)
     title = models.CharField(max_length=250)
     about = models.TextField()
-    profilepicture = models.ImageField(upload_to="images", blank=False)
+    profilepicture = models.ImageField(upload_to="images/", blank=False)
 
     def __str__(self):
         return self.name

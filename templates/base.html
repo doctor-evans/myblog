@@ -65,7 +65,23 @@
         <div id="page-content-wrapper">
             <div class="section wb">
                 <div class="container">
-                    {% include 'welcome.html' %}
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-left">
+                            <div class="message-box">
+                                <h4>Welcome</h4>
+                                <h2>To Gainwealth Investment</h2>
+                                <p class="lead" style="font-weight: bold;"> {{ about.welcome_message }}</p>
+                            </div><!-- end messagebox -->
+                        </div><!-- end col -->
+                        <div class="col-md-6 text-center">
+                            <div class="right-box">
+                                <img class="img-fluid"
+                                    src="https://images.unsplash.com/photo-1619542402915-dcaf30e4e2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+                                    alt="" />
+
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
 
                     {% block content %}
                     <!-- Content Goes here -->

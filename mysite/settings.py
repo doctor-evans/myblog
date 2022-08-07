@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'cloudinary_storage',
+    'cloudinary',
     "blog",
     "crispy_forms",
     "ckeditor",
@@ -129,6 +131,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'de52qsije',
+    'API_KEY': '867435994538142',
+    'API_SECRET': 'GXw6spBSPpv2_oqqpB2LoAzJaIg'
+}
+
+MEDIA_URL = '/media/'  # or any prefix you choose
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATIC_URL = "static/"
 
 # Default primary key field type
@@ -139,7 +150,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 STATIC_URL = "/static/"
-MEDIA_URL = "/media/"
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_ROOT = BASE_DIR / "images"
 CKEDITOR_UPLOAD_PATH = "uploads/"
