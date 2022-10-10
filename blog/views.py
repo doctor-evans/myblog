@@ -13,7 +13,13 @@ from .forms import CommentForm
 # class PostDetail(generic.DetailView):
 #     model = Post
 #     template_name = "post_detail.html"
-
+def welcomeView(request):
+    links = Links.objects.all().first()
+    return render(
+        request,
+        "welcome.html",
+        {"links": links,}
+    )
 
 def indexView(request):
     about = AboutUs.objects.all().first()

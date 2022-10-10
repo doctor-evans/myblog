@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GainWealth Investment</title>
+  <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <style type="text/css">
+    #box1 {
+      width: 530px;
+      height: 100%;
+      background-image: url();
+      position: absolute;
+      bottom: -100%;
+      left: 30%;
+      animation: anim 2s forwards, anim2 3s forwards 3s;
+    }
+
+    #box1:after {
+      content: '';
+      position: absolute;
+      width: 530px;
+      height: 100%;
+      background-image: url();
+      left: 0px;
+      z-index: -1;
+    }
+
+    @keyframes anim {
+      from {
+        bottom: -100%;
+      }
+
+      to {
+        bottom: 0%;
+      }
+    }
+
+    @keyframes anim2 {
+      from {
+        left: 30%;
+        width: 530px;
+      }
+
+      to {
+        width: 0px;
+        left: 50%;
+      }
+    }
+
+    #box2 {
+      width: auto;
+      height: auto;
+      font-family: 'Condensed';
+      color: white;
+      font-size: 5em;
+      font-weight: 500;
+      line-height: 80px;
+      position: absolute;
+      top: 250px;
+      left: 100px;
+      overflow: hidden;
+    }
+
+    #text {
+      position: relative;
+      left: -100%;
+      animation: anim3 2s forwards 3s;
+    }
+
+    @keyframes anim3 {
+      from {
+        left: -100%;
+      }
+
+      to {
+        left: 0%;
+      }
+    }
+
+    #textt {
+      position: relative;
+      left: -100%;
+      animation: animtext 2s forwards;
+    }
+
+    @keyframes animtext {
+      from {
+        left: -100%;
+      }
+
+      to {
+        left: 0%;
+      }
+    }
+
+    @media only screen and (min-width: 280px) and (max-width: 500px) {
+      #box1 {
+        width: 530px;
+        height: 100%;
+        background-image: url();
+        position: absolute;
+        bottom: -100%;
+        left: 30px;
+        animation: anim 2s forwards, anim2 3s forwards 3s;
+      }
+
+      #box1:after {
+        content: '';
+        position: absolute;
+        width: 530px;
+        height: 100%;
+        background-image: url();
+        left: 0px;
+        z-index: -1;
+      }
+
+      @keyframes anim {
+        from {
+          bottom: -100%;
+        }
+
+        to {
+          bottom: 0%;
+        }
+      }
+
+      @keyframes anim2 {
+        from {
+          left: 30px;
+          width: 530px;
+        }
+
+        to {
+          width: 0px;
+          left: 90px;
+        }
+      }
+
+      #box2 {
+        width: auto;
+        height: auto;
+        font-family: 'Condensed';
+        color: white;
+        font-size: 2em;
+        font-weight: 400;
+        line-height: 30px;
+        position: absolute;
+        top: 200px;
+        left: 40px;
+        overflow: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="brand"><img src="{% static 'blog/gwlogo1.png' %}" alt="" height="47" width="50"
+        style="padding:0;"></a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutview' %}">About</a>
+        <a href="https://youtube.com">GainWealth TV</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <video class="video-slide active" src="{% static 'blog/src.mp4' %}" autoplay muted loop></video>
+    <video class="video-slide" src="{% static 'blog/src.mp4' %}" autoplay muted loop></video>
+    <div class="content">
+
+      <div id="box1"></div>
+      <div id="box2">
+        <div id="text">
+          GW <br>Investments
+        </div>
+      </div>
+
+    </div>
+    <div class="content active" id="textt">
+      <h1>GainWealth<br><span>Blog</span></h1>
+      <p>Gain wealth is a blogging platform by made by professional to help the 'ordinary' man learn about real estate
+        as a business and as a resident looking for comfort and more. Gain wealth also help readers learn the
+        relationship between real estate and money.</p>
+      <a href="{% url 'home' %}">Read Blog</a>
+    </div>
+    <div class="media-icons">
+      <a href="{{ links.facebook }}"><i class="fab fa-facebook-f"></i></a>
+      <a href="{{ links.instagram }}"><i class="fab fa-instagram"></i></a>
+      <a href="{{ links.twitter }}"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function (manual) {
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
