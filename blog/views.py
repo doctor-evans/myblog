@@ -15,11 +15,16 @@ from .forms import CommentForm
 #     template_name = "post_detail.html"
 def welcomeView(request):
     links = Links.objects.all().first()
+    about = AboutUs.objects.all().first()
     return render(
         request,
         "welcome.html",
-        {"links": links,}
+        {
+            "links": links,
+            "about": about,
+        },
     )
+
 
 def indexView(request):
     about = AboutUs.objects.all().first()

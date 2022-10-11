@@ -26,7 +26,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = "django-insecure-@@=c*pw_a-poxvn63ek(4vm!!hkf97@j-$zikk554+^zd$-bwp"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://gainwealth.net", "http://127.0.0.1:8000/", "localhost"]
 
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'cloudinary_storage',
-    'cloudinary',
+    "cloudinary_storage",
+    "cloudinary",
     "blog",
     "crispy_forms",
     "ckeditor",
@@ -132,13 +132,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'de52qsije',
-    'API_KEY': '867435994538142',
-    'API_SECRET': 'GXw6spBSPpv2_oqqpB2LoAzJaIg'
+    "CLOUD_NAME": "de52qsije",
+    "API_KEY": "867435994538142",
+    "API_SECRET": "GXw6spBSPpv2_oqqpB2LoAzJaIg",
 }
 
-MEDIA_URL = '/media/'  # or any prefix you choose
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = "/media/"  # or any prefix you choose
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 STATIC_URL = "static/"
 
