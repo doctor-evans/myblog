@@ -241,8 +241,8 @@
 
     header .navigation.active .navigation-items {
       background: #fff;
-      width: 600px;
-      max-width: 600px;
+      width: 80%;
+      max-width: 80%;
       margin: 20px;
       padding: 40px;
       display: flex;
